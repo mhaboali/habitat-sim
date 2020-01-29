@@ -5,6 +5,8 @@
 #include "PathFinder.h"
 #include <stack>
 #include <unordered_map>
+#include <iostream>
+#include <fstream>
 
 #include <Magnum/Magnum.h>
 #include <Magnum/Math/Vector3.h>
