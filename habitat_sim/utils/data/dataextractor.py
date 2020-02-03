@@ -48,6 +48,8 @@ class ImageExtractor:
 
         if sim is None:
             sim = habitat_sim.Simulator(self.cfg)
+        else:
+            sim.reconfigure(self.cfg)
 
         self.sim = sim
         self.res = 0.1
