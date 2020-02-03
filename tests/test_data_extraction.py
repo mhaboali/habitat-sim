@@ -67,7 +67,7 @@ def test_data_extractor_end_to_end(sim):
         "../../data/scene_datasets/habitat-test-scenes/skokloster-castle.glb"
     )
     dataset = HabitatDataset(scene_filepath, labels=[0.0], img_size=(512, 512), sim=sim)
-    # dataloader = DataLoader(dataset, batch_size=3)
+    dataloader = DataLoader(dataset, batch_size=3)
 
 >>>>>>> Added more user options for image extraction and added heuristics to BFS
     net = TrivialNet()
