@@ -4,6 +4,7 @@
 import numpy as np
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
 from torch.utils.data import DataLoader, Dataset
 
 from habitat_sim.utils.data.dataextractor import ImageExtractor, TopdownView
@@ -12,20 +13,10 @@ from habitat_sim.utils.data.dataextractor import ImageExtractor, TopdownView
 class TrivialNet(nn.Module):
     def __init__(self):
         super(TrivialNet, self).__init__()
-        self.out = nn.Linear(4096, 10)
 
     def forward(self, x):
-        flat_dim_size = self.get_flat_dim(x)
-        x = x.view(-1, flat_dim_size)
-        x = self.out(x)
+        x = F.relu(x)
         return x
-
-    def get_flat_dim(self, x):
-        size = 1
-        for dim in x.size()[1:]:
-            size *= dim
-
-        return size
 
 
 class MyDataset(Dataset):
