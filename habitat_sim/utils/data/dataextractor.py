@@ -5,8 +5,6 @@ import os
 
 import matplotlib.pyplot as plt
 import numpy as np
-import torch
-from torch.utils.data import Dataset
 
 import habitat_sim
 import habitat_sim.bindings as hsim
