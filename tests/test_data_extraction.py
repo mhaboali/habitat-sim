@@ -30,17 +30,6 @@ class MyDataset(Dataset):
         return self.extractor[idx]
 
 
-class MyDataset(Dataset):
-    def __init__(self, extractor):
-        self.extractor = extractor
-
-    def __len__(self):
-        return len(self.extractor)
-
-    def __getitem__(self, idx):
-        return self.extractor[idx]
-
-
 def test_topdown_view(sim):
     tdv = TopdownView(sim, res=0.1)
     topdown_view = tdv.topdown_view
